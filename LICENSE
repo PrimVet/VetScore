@@ -1,0 +1,101 @@
+LICENSING TERMS FOR THIS DATASET
+================================
+
+This dataset (the "Dataset") is not distributed under a single licence. It
+comprises three categories of content, each originating from a different rights
+holder and each remaining subject to its own terms. Any person who reproduces,
+redistributes, or otherwise makes use of any portion of the Dataset (the
+"Recipient") is required to review these terms in full beforehand, and to observe
+the terms applicable to each category of content they use.
+
+Summary of terms. The contributions of the authors are licensed under CC BY 4.0.
+Excerpts quoted from third-party works remain subject to the licence recorded in
+the `license` field of each excerpt record. Because a portion of those excerpts is
+licensed on NonCommercial terms, and a further portion on NoDerivatives terms, the
+Dataset as distributed is NOT available for commercial use, and no provision of
+this file should be construed as granting such rights. A Recipient requiring a
+commercially usable subset may obtain one by excluding every excerpt whose
+`license` field contains "-NC", together with those containing "-ND" where
+modification of excerpt text is intended. This summary is provided for convenience
+and does not limit or vary the terms of the sections below.
+
+
+1. ANNOTATIONS, QUERIES, AND STRUCTURE — CC BY 4.0
+---
+Copyright (c) 2026 the authors. All material identified in this Section is
+licensed to the Recipient under the Creative Commons Attribution 4.0
+International Public Licence (CC BY 4.0), the full text of which is available at
+https://creativecommons.org/licenses/by/4.0/. This Section applies to the
+following, each of which is the original work of the authors:
+
+  - annotations_scoring.jsonl and annotations_verification.jsonl in their
+    entirety (per-rater harm scores, support votes, means, PCM aggregates);
+  - queries.jsonl in its entirety, and the `query` and `topic` fields wherever
+    they appear;
+  - the segmentation of model answers into segments, the decomposition into
+    claims, the citation-match statuses, the licence tiering, and every derived
+    field in segments.jsonl;
+
+Nothing in this Section extends to the material governed by Sections 2 and 3.
+
+
+2. QUOTED EXCERPTS — each under its source article's own licence
+---
+The Dataset incorporates excerpts quoted from articles published on PubMed
+Central. These excerpts are the works of third parties. The authors neither own
+nor purport to license them, and grant no rights in respect of them. The licence
+governing each excerpt is recorded in the `license` field of its record, and the
+licences so recorded include Creative Commons Attribution (CC BY),
+Attribution-NonCommercial (CC BY-NC), Attribution-NonCommercial-NoDerivatives
+(CC BY-NC-ND), Attribution-NonCommercial-ShareAlike (CC BY-NC-SA) and
+Attribution-NoDerivatives (CC BY-ND), in various versions, together with works
+dedicated under CC0 and works under the UK Open Government Licence.
+
+A Recipient who reproduces or redistributes any excerpt does so subject to the
+licence recorded for that excerpt, and is responsible for attributing the source
+article. The fields `source_title`, `source_authors`, `source_journal`,
+`source_year`, `source_url` and `license` are provided on every record for that
+purpose.
+
+Where an excerpt could not be delivered, its `excerpt` field is null and no other
+field describes it. In respect of such an excerpt the Dataset publishes no part of
+the passage and no description of it, and the authors make no representation as 
+to its content or extent. What remains is a citation to the source article, together 
+with the authors' own record of how that citation was made. A Recipient who obtains 
+the text of such an excerpt from any other source holds it subject to the terms of
+the source article, and nothing in this file grants any right in it.
+
+Where the `verbatim` field of an excerpt record is false, the text distributed is
+the language model's rendering and not the wording of the source article. Such
+text shall not be attributed to the source article as a quotation.
+
+
+3. MODEL-GENERATED TEXT — provider terms apply
+---
+The `text` field of each segment, and the `claims` derived from it, are the output
+of six commercial and open-weight language models: Claude Opus 4.6, DeepSeek V3.2,
+Gemini 3.1 Pro, GPT-5.4, Mistral Small 2603, and Qwen 3.5 397B. The `model` field
+of each segment record identifies the model from which that segment originates.
+
+The authors assert no copyright in this material and grant no rights in respect of
+it. The terms of service of the respective providers may restrict the use that may
+be made of model output, including in several instances its use in training or
+improving competing models. A Recipient whose intended use depends on rights in
+this material is responsible for ascertaining and complying with the terms of the
+applicable provider.
+
+
+WARRANTY
+---
+THE DATASET IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, ACCURACY, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION
+WITH THE DATASET OR THE USE OR OTHER DEALINGS IN THE DATASET.
+
+The licence classification recorded for each excerpt reflects metadata resolved
+from the NCBI E-utilities and the PMC Open Access service at the time of
+compilation. It is provided in good faith, may contain errors, and does not
+constitute legal advice. A Recipient intending to rely on that classification is
+responsible for verifying it against the source article.
