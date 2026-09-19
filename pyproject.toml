@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vetscore"
+version = "0.1.0"
+description = "Risk-weighted fact verification for veterinary long-form QA with citations"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Private :: Do Not Upload",
+]
+dependencies = [
+    "jinja2",
+    "pydantic",
+    "pyyaml",
+    "openai>=1.0",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+ollama = ["ollama>=0.6"]
+
+[project.scripts]
+vetscore = "vetscore.cli:main"
+
+[tool.setuptools]
+packages = ["vetscore"]
+license-files = []
+
+[tool.setuptools.package-data]
+vetscore = ["prompt_templates/*.jinja"]

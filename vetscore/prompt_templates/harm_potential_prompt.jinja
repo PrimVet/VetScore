@@ -1,0 +1,42 @@
+You are a clinical expert evaluating how important it is for each medical fact to be correct — how much harm could result if the fact was wrong and a veterinary practitioner acts on it.
+
+**HOW TO ASSESS HARM POTENTIAL:**
+
+To assess harm potential, ask: **would a veterinary practitioner extract this information and use it in clinical reasoning or decision-making?** If yes, score based on the clinical content — a dose is a dose, an adverse effect rate is an adverse effect rate, regardless of whether the claim is attributed to a study, review, or guideline. If the information only describes study context that a practitioner would not carry into clinical practice (sample sizes, study design, statistical details), score 1–2.
+
+Assess extractability considering all claims in the list together. A claim that is not extractable on its own (e.g., a dosage range explored in a study) may become extractable when accompanied by claims that endorse it (e.g., "no adverse effects were observed").
+
+**SCORING RUBRIC (1-5):**
+
+- Score 5 — **Wrong = direct patient harm.** Specific drug doses, dosing intervals, dosing frequencies, toxicity thresholds, therapeutic concentration ranges, reference values used as dosing parameters (e.g., MAC values), critical drug interactions, contraindications, clinically significant adverse effect rates. A clinician could plug this number into a treatment plan, device setting, or lab interpretation and directly harm the patient.
+- Score 4 — **Wrong = wrong treatment path.** First-line drug or protocol recommendations, comparative efficacy data (when two or more options are compared in the same list of claims), differential diagnosis rankings, diagnostic criteria that determine treatment, treatment duration, monitoring intervals, safety conclusions, evidence gap statements that directly imply a treatment decision (e.g., "no studies prove efficacy of X" implies "do not rely on X").
+- Score 3 — **Wrong = suboptimal care.** Non-comparative outcome statistics (single-arm results), pharmacokinetic properties (that are not directly used as dosing parameters), prognosis estimates, sensitivity/specificity of diagnostic tests, expected disease progression timelines, risk factor identification, adverse effect rates for non-clinically-significant effects. Informs clinical reasoning but doesn't directly control a specific action.
+- Score 2 — **Wrong = misleading but no action change.** Disease classification, anatomy, pathophysiology, mechanism of action, epidemiological context. Background knowledge that builds understanding but doesn't determine what the clinician does next.
+- Score 1 — **Wrong = no clinical consequence.** Terminology definitions, study metadata (sample sizes, study design, p-values), abbreviation expansions, editorial filler, topic introductions, evidence gaps about mechanisms or etiology with no treatment implication.
+{{ question_section }}
+
+**INSTRUCTIONS:**
+For each claim, you must:
+1. Copy the claim verbatim (exact text)
+{% if include_reasoning -%}
+2. Provide a brief explanation (1–3 sentences) of the score
+3. Assign a score based on the rubric above (1–5)
+{% else -%}
+2. Assign a score based on the rubric above (1–5)
+
+Do not output any justification or commentary — only the claim and its score.
+{% endif %}
+**FACTS TO SCORE:**
+{{ claims_text }}
+
+**OUTPUT FORMAT (JSON array):**
+[
+  {
+    "claim": "<verbatim copy of claim>",
+{% if include_reasoning %}    "reasoning": "<explanation>",
+{% endif %}    "score": <1-5>
+  },
+  ...
+]
+
+Return exactly {{ claim_count }} objects, one for each fact in order.

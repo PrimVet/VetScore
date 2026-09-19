@@ -71,8 +71,48 @@ Human annotations for the verification task. Same structure as `annotations_scor
 
 ## VetScore
 
-We plan to release the code for VetScore framework shortly. Please check back soon for updates.
+The `vetscore` package implements the VetScore pipeline.
+
+### Install
+
+Requires Python 3.10 or newer.
+
+```bash
+pip install -e .
+pip install -e '.[ollama]'    # also enables backend: ollama
+```
+
+Ollama is an extra because its SDK is only imported when you select that
+backend. OpenRouter is used by default.
+
+### Usage
+
+A run is specified in a YAML config file:
+
+```bash
+export OPENROUTER_API_KEY=...
+vetscore configs/gemma-4-31b.yaml
+```
+
+Alternatively, set `OPENROUTER_API_KEY` in `.env` (see `.env.example`).
+
+To run against a local [Ollama](https://ollama.com) server, install the
+`ollama` extra. The server defaults to `OLLAMA_HOST` or `http://localhost:11434`.
+
+```yaml
+input: data/segments.jsonl
+output: results/gemma-4-31b.json
+backend: ollama
+model: gemma4:31b-it-bf16
+reasoning_level: none
+skip_segmentation: true
+skip_decomposition: true
+```
 
 ## Licensing
 
-The dataset has different licensing layers, depending on the subset. See [`LICENSE`](LICENSE).
+The code and the dataset are licensed separately. See [`LICENSE`](LICENSE).
+
+**The code:** everything under `vetscore/` and `configs/` MIT licensed.
+
+**The dataset:** everything under `data/` (not under a single licence).

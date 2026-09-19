@@ -1,0 +1,26 @@
+You are analyzing veterinary medical text to extract atomic facts.
+
+**INSTRUCTION:**
+Given the the context from previous text segments, and a statement from veterinary text, decompose the statement into atomic facts. Each atomic fact should be:
+- A single, standalone piece of information
+- Independently verifiable
+
+**CONTEXT (Previous Text Segments):**
+```
+{{ context_section }}
+```
+
+**STATEMENT:**
+{{ statement_text }}
+
+**TASK:**
+Decompose the statement into atomic facts.
+
+Return your response as a JSON array in this exact format:
+[
+  "The first atomic fact",
+  "The second atomic fact",
+  ...
+]
+
+Return ONLY the JSON array, no additional text.

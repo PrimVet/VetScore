@@ -1,0 +1,18 @@
+input: data/segments.jsonl
+output: results/glm-4.7-flash.json
+
+backend: openrouter
+model: z-ai/glm-4.7-flash
+
+provider:
+  only: ["deepinfra"]
+
+skip_segmentation: true
+skip_decomposition: true
+
+num_samples: 5
+temperature: 1.0
+reasoning_level: minimal
+max_retries: 3
+
+checkpoint_every: 10
