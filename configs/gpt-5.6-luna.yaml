@@ -1,0 +1,17 @@
+input: data/segments.jsonl
+output: results/gpt-5.6-luna.json
+
+backend: openrouter
+model: openai/gpt-5.6-luna
+
+schema_root: object
+
+skip_segmentation: true
+skip_decomposition: true
+
+num_samples: 5
+temperature: 1.0
+reasoning_level: minimal
+max_retries: 3
+
+checkpoint_every: 10

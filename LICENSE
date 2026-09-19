@@ -98,3 +98,13 @@ from the NCBI E-utilities and the PMC Open Access service at the time of
 compilation. It is provided in good faith, may contain errors, and does not
 constitute legal advice. A Recipient intending to rely on that classification is
 responsible for verifying it against the source article.
+
+
+LICENSING TERMS FOR THE CODE
+============================
+
+Copyright (c) 2026 the authors. These terms apply to every file in this
+repository outside the `data/` directory (the "Code"). The Code is licensed
+under the Creative Commons Attribution-NonCommercial 4.0 International Public
+Licence (CC BY-NC 4.0), the full text of which is available at
+https://creativecommons.org/licenses/by-nc/4.0/.

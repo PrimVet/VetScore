@@ -1,0 +1,15 @@
+input: data/segments.jsonl
+output: results/gemini-3.6-flash.json
+
+backend: openrouter
+model: google/gemini-3.6-flash
+
+skip_segmentation: true
+skip_decomposition: true
+
+num_samples: 5
+temperature: 1.0
+reasoning_level: minimal
+max_retries: 3
+
+checkpoint_every: 10

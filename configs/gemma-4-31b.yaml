@@ -1,0 +1,18 @@
+input: data/segments.jsonl
+output: results/gemma-4-31b.json
+
+backend: openrouter
+model: google/gemma-4-31b-it
+
+provider:
+  only: ["open-inference"]
+
+skip_segmentation: true
+skip_decomposition: true
+
+num_samples: 5
+temperature: 1.0
+reasoning_level: minimal
+max_retries: 3
+
+checkpoint_every: 10
